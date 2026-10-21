@@ -1,0 +1,30 @@
+:root{--ivory:#efe7d8;--gold:#d4ae56;--wine:#4a1b26;--ink:#0b0809;--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html,body,#root{margin:0;height:100%;background:var(--ink);color:var(--ivory);font-family:var(--sans);overflow:hidden}
+canvas{display:block;outline:none}
+button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn{background:none;border:1px solid var(--gold);color:var(--gold);padding:.9rem 1.6rem;letter-spacing:.25em;font-size:.8rem}
+.btn:hover{background:var(--gold);color:var(--ink)}.btn.small{padding:.5rem 1rem;letter-spacing:.15em}
+.link{background:none;border:0;color:var(--ivory);opacity:.75;font-size:.8rem;letter-spacing:.1em;padding:.5rem}.link:hover{opacity:1}
+.intro{position:fixed;inset:0;z-index:30;background:radial-gradient(circle at 50% 78%,#2a1a14 0,var(--ink) 40%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;text-align:center;padding:2rem}
+.kicker{letter-spacing:.5em;font-size:.8rem;color:var(--gold);margin:0}.intro h1{font:400 clamp(1.3rem,3.5vw,2.2rem)/1.3 var(--serif);margin:0;max-width:30ch}
+blockquote{font:italic 1.05rem/1.7 var(--serif);margin:.5rem 0 1.2rem;opacity:.85}.small{font-size:.75rem;opacity:.55;max-width:44ch;margin:0}
+.brand{position:fixed;top:1rem;left:1.2rem;z-index:10;display:flex;flex-direction:column;gap:.2rem;pointer-events:none;text-shadow:0 1px 8px #000}
+.brand b{letter-spacing:.35em;font-size:.7rem;color:var(--gold)}.brand span{font:italic .95rem var(--serif)}
+.tools{position:fixed;top:.8rem;right:1rem;z-index:10;display:flex;gap:.3rem}
+.help{position:fixed;top:4rem;right:1rem;z-index:10;max-width:320px;background:#000b;padding:.8rem 1rem;font-size:.8rem;line-height:1.5}.help p{margin:.2rem 0}
+.prompt{position:fixed;bottom:18%;left:50%;transform:translateX(-50%);z-index:10;background:#000c;border:1px solid var(--gold);padding:.7rem 1.4rem;font:1rem var(--serif);display:flex;flex-direction:column;gap:.15rem}.prompt small{font:.7rem var(--sans);opacity:.7}
+.tour{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:1rem;align-items:center;background:#000b;padding:.3rem 1rem;font-size:.8rem}
+.stick{position:fixed;left:1.5rem;bottom:calc(1.5rem + env(safe-area-inset-bottom));width:110px;height:110px;border:1px solid #fff4;border-radius:50%;z-index:10;touch-action:none;display:grid;place-items:center;background:#0006}
+.stick i{width:44px;height:44px;border-radius:50%;background:#d4ae56aa}
+.curtain{position:fixed;inset:0;z-index:20;background:#000;pointer-events:none;animation:fo 2.8s ease-in forwards}@keyframes fo{0%,25%{opacity:1}to{opacity:0}}
+.veil{position:fixed;inset:0;z-index:25;background:#000;opacity:0;pointer-events:none;transition:opacity .35s}.veil.on{opacity:1}
+.overlay{position:fixed;inset:0;z-index:40;background:#000c;backdrop-filter:blur(6px);display:grid;place-items:center;padding:1rem;overflow:auto}.overlay.dim{background:#000e}
+.panel{max-width:min(960px,100%);background:#171113;border:1px solid #d4ae5655;display:grid;grid-template-columns:1fr}
+.panel.photo{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.panel img,.ph{width:100%;max-height:80vh;object-fit:contain;background:#0d0a0b}
+.ph{min-height:300px;display:grid;place-content:center;text-align:center;font:1.3rem var(--serif);padding:2rem}.ph small{font:.75rem var(--sans);opacity:.5}
+.txt{padding:1.8rem;display:flex;flex-direction:column;gap:.8rem}.txt h2{font:400 1.6rem var(--serif);margin:0}.txt p{font:1.05rem/1.7 var(--serif);margin:0;opacity:.9}
+time{font-size:.75rem;letter-spacing:.2em;color:var(--gold)}.row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:1rem}.row .btn{margin-left:auto}
+.letter{max-width:600px;width:100%;padding:2rem 1rem;font:1.25rem/1.9 var(--serif)}.letter h2{font:400 .8rem var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 2rem}
+.letter p{margin:0;opacity:0;transition:opacity 1.2s}.letter p.on,.closing.on p{opacity:1}.closing{opacity:0;transition:opacity 2s}.closing.on{opacity:1}.closing p{opacity:1}
+@media(max-width:700px){.panel.photo{grid-template-columns:1fr}.brand span{font-size:.8rem}.prompt{bottom:26%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.curtain{display:none}}
